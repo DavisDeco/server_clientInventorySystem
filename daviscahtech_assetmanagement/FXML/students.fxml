@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="1100.0" stylesheets="@../assetManagement.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daviscahtech_assetmanagement.Controller.StudentsController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="1200.0" styleClass="gridBackground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar styleClass="radiusBorder">
+              <menus>
+                <Menu mnemonicParsing="false" onAction="#closethisWindowOperation" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close window">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/red_exit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Import data">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#importStudentsFromExcelOperation" text="Import student list">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/excel.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Register">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openDesksAndChairsWindow" text="Register desks and chairs">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/board.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                  </items>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </MenuBar>
+            <HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox>
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefWidth="200.0" style="-fx-background-radius: 13; -fx-border-radius: 13; -fx-background-color: lightgrey;" stylesheets="@../assetManagement.css">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student image">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Text>
+                              <HBox alignment="CENTER" style="-fx-border-color: blue;" styleClass="radiusbordershape">
+                                 <children>
+                                    <ImageView fx:id="studentImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/student.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                              <Separator>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Separator>
+                              <Button mnemonicParsing="false" onAction="#choosestudentImageView" styleClass="camera">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/camera.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Choose product photo if available">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/pin.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Tooltip>
+                                 </tooltip>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <Button layoutX="15.0" layoutY="324.0" mnemonicParsing="false" onAction="#openStudentLearningMaterialWindow" prefHeight="25.0" prefWidth="192.0" styleClass="buttons2" text="Student learning materials">
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                          <tabs>
+                            <Tab text="Student panel">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="brownBackground">
+                                       <children>
+                                          <HBox prefHeight="613.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <VBox prefHeight="546.0" prefWidth="263.0" style="-fx-background-color: floralwhite;" styleClass="radiusBorder">
+                                                   <children>
+                                                      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                                         <tabs>
+                                                            <Tab text="Register">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="gridBackground">
+                                                                     <children>
+                                                                        <VBox alignment="TOP_CENTER" layoutX="50.0" prefHeight="551.0" prefWidth="263.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <padding>
+                                                                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                           </padding>
+                                                                           <children>
+                                                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Register new student">
+                                                                                 <font>
+                                                                                    <Font name="System Bold" size="13.0" />
+                                                                                 </font>
+                                                                              </Text>
+                                                                              <TextField fx:id="student_id" promptText="Enter student ID number *" styleClass="fields">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="10.0" />
+                                                                                 </VBox.margin>
+                                                                                 <padding>
+                                                                                    <Insets bottom="5.0" left="20.0" top="5.0" />
+                                                                                 </padding>
+                                                                              </TextField>
+                                                                              <TextField fx:id="student_name" layoutX="15.0" layoutY="33.0" promptText="Enter student's name *" styleClass="fields">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="25.0" />
+                                                                                 </VBox.margin>
+                                                                                 <padding>
+                                                                                    <Insets bottom="5.0" left="20.0" top="5.0" />
+                                                                                 </padding>
+                                                                              </TextField>
+                                                                              <HBox alignment="BOTTOM_CENTER">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="25.0" />
+                                                                                 </VBox.margin>
+                                                                                 <children>
+                                                                                    <VBox>
+                                                                                       <children>
+                                                                                          <Text fx:id="displayStudentClass" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                                                             <VBox.margin>
+                                                                                                <Insets bottom="5.0" left="10.0" />
+                                                                                             </VBox.margin>
+                                                                                             <font>
+                                                                                                <Font name="System Bold" size="13.0" />
+                                                                                             </font>
+                                                                                          </Text>
+                                                                                          <ComboBox fx:id="student_class" prefHeight="25.0" prefWidth="293.0" promptText="Choose student's class" style="-fx-border-color: #cc00cc;" styleClass="radiusBorder" />
+                                                                                       </children>
+                                                                                    </VBox>
+                                                                                    <Button mnemonicParsing="false" onAction="#student_refreshClassOperation">
+                                                                                       <graphic>
+                                                                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                             <image>
+                                                                                                <Image url="@../Resources/syn.png" />
+                                                                                             </image>
+                                                                                          </ImageView>
+                                                                                       </graphic>
+                                                                                       <HBox.margin>
+                                                                                          <Insets left="25.0" right="5.0" />
+                                                                                       </HBox.margin>
+                                                                                       <tooltip>
+                                                                                          <Tooltip text="Refresh class List" wrapText="true">
+                                                                                             <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                   <image>
+                                                                                                      <Image url="@../Resources/pin.png" />
+                                                                                                   </image>
+                                                                                                </ImageView>
+                                                                                             </graphic>
+                                                                                          </Tooltip>
+                                                                                       </tooltip>
+                                                                                    </Button>
+                                                                                 </children>
+                                                                              </HBox>
+                                                                              <Button mnemonicParsing="false" onAction="#registerStudentOperation" prefWidth="200.0" styleClass="buttons1" text="Register Student Details">
+                                                                                 <graphic>
+                                                                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                                                       <image>
+                                                                                          <Image url="@../Resources/add.png" />
+                                                                                       </image>
+                                                                                    </ImageView>
+                                                                                 </graphic>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="30.0" />
+                                                                                 </VBox.margin>
+                                                                              </Button>
+                                                                              <Button mnemonicParsing="false" onAction="#updateStudentOperation" prefWidth="200.0" styleClass="buttons1" text="Update Student Details">
+                                                                                 <graphic>
+                                                                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                                                       <image>
+                                                                                          <Image url="@../Resources/update.png" />
+                                                                                       </image>
+                                                                                    </ImageView>
+                                                                                 </graphic>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="10.0" />
+                                                                                 </VBox.margin>
+                                                                              </Button>
+                                                                              <Button mnemonicParsing="false" onAction="#deleteStudentOperation" prefWidth="200.0" styleClass="buttons1" text="Delete Student Details">
+                                                                                 <graphic>
+                                                                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                                                       <image>
+                                                                                          <Image url="@../Resources/delete.png" />
+                                                                                       </image>
+                                                                                    </ImageView>
+                                                                                 </graphic>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="10.0" />
+                                                                                 </VBox.margin>
+                                                                              </Button>
+                                                                              <Button mnemonicParsing="false" onAction="#clearStudentFiledOperation" prefWidth="200.0" styleClass="buttons1" text="Clear fields">
+                                                                                 <graphic>
+                                                                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                                                       <image>
+                                                                                          <Image url="@../Resources/clear.png" />
+                                                                                       </image>
+                                                                                    </ImageView>
+                                                                                 </graphic>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="10.0" />
+                                                                                 </VBox.margin>
+                                                                              </Button>
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/student.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Tab>
+                                                            <Tab text="Report &amp; printing">
+                                                               <content>
+                                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="patternBackground">
+                                                                     <children>
+                                                                        <VBox prefHeight="564.0" prefWidth="263.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                           <padding>
+                                                                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                           </padding>
+                                                                           <children>
+                                                                              <Text fill="BLUE" layoutX="20.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class List">
+                                                                                 <font>
+                                                                                    <Font name="System Bold" size="12.0" />
+                                                                                 </font>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="15.0" />
+                                                                                 </VBox.margin>
+                                                                              </Text>
+                                                                              <Text layoutX="20.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class list for desk &amp; chair allocation">
+                                                                                 <font>
+                                                                                    <Font name="System Bold" size="12.0" />
+                                                                                 </font>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="5.0" />
+                                                                                 </VBox.margin>
+                                                                              </Text>
+                                                                              <HBox alignment="CENTER_RIGHT" layoutX="20.0" layoutY="62.0">
+                                                                                 <children>
+                                                                                    <VBox alignment="CENTER_RIGHT">
+                                                                                       <children>
+                                                                                          <HBox>
+                                                                                             <children>
+                                                                                                <ComboBox fx:id="classNameForPrinting" prefHeight="25.0" prefWidth="212.0" promptText="Choose class" style="-fx-border-color: #cc00cc;" />
+                                                                                                <Button mnemonicParsing="false" onAction="#refreshClassNameForPrinting">
+                                                                                                   <graphic>
+                                                                                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                         <image>
+                                                                                                            <Image url="@../Resources/syn.png" />
+                                                                                                         </image>
+                                                                                                      </ImageView>
+                                                                                                   </graphic>
+                                                                                                   <tooltip>
+                                                                                                      <Tooltip text="Refresh class List" wrapText="true">
+                                                                                                         <graphic>
+                                                                                                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                               <image>
+                                                                                                                  <Image url="@../Resources/pin.png" />
+                                                                                                               </image>
+                                                                                                            </ImageView>
+                                                                                                         </graphic>
+                                                                                                      </Tooltip>
+                                                                                                   </tooltip>
+                                                                                                   <HBox.margin>
+                                                                                                      <Insets left="10.0" />
+                                                                                                   </HBox.margin>
+                                                                                                </Button>
+                                                                                             </children>
+                                                                                          </HBox>
+                                                                                          <Button mnemonicParsing="false" onAction="#printClassListOperation" styleClass="buttons2" text="Print">
+                                                                                             <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                   <image>
+                                                                                                      <Image url="@../Resources/pdf.png" />
+                                                                                                   </image>
+                                                                                                </ImageView>
+                                                                                             </graphic>
+                                                                                             <VBox.margin>
+                                                                                                <Insets top="10.0" />
+                                                                                             </VBox.margin>
+                                                                                          </Button>
+                                                                                       </children>
+                                                                                       <HBox.margin>
+                                                                                          <Insets />
+                                                                                       </HBox.margin>
+                                                                                    </VBox>
+                                                                                 </children>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="5.0" />
+                                                                                 </VBox.margin>
+                                                                              </HBox>
+                                                                              <Separator prefWidth="200.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="10.0" />
+                                                                                 </VBox.margin>
+                                                                              </Separator>
+                                                                              <Text fill="BLUE" layoutX="20.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class List">
+                                                                                 <font>
+                                                                                    <Font name="System Bold" size="12.0" />
+                                                                                 </font>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="5.0" />
+                                                                                 </VBox.margin>
+                                                                              </Text>
+                                                                              <Text layoutX="20.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class list for other material allocation">
+                                                                                 <font>
+                                                                                    <Font name="System Bold" size="12.0" />
+                                                                                 </font>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="5.0" />
+                                                                                 </VBox.margin>
+                                                                              </Text>
+                                                                              <HBox alignment="CENTER_RIGHT" layoutX="20.0" layoutY="77.0">
+                                                                                 <children>
+                                                                                    <VBox alignment="CENTER_RIGHT">
+                                                                                       <children>
+                                                                                          <HBox>
+                                                                                             <children>
+                                                                                                <ComboBox fx:id="classNameForOtherAllocation" prefHeight="25.0" prefWidth="212.0" promptText="Choose class" style="-fx-border-color: #cc00cc;" />
+                                                                                                <Button mnemonicParsing="false" onAction="#refreshClassNameForOtherAllocation">
+                                                                                                   <graphic>
+                                                                                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                         <image>
+                                                                                                            <Image url="@../Resources/syn.png" />
+                                                                                                         </image>
+                                                                                                      </ImageView>
+                                                                                                   </graphic>
+                                                                                                   <tooltip>
+                                                                                                      <Tooltip text="Refresh class List" wrapText="true">
+                                                                                                         <graphic>
+                                                                                                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                               <image>
+                                                                                                                  <Image url="@../Resources/pin.png" />
+                                                                                                               </image>
+                                                                                                            </ImageView>
+                                                                                                         </graphic>
+                                                                                                      </Tooltip>
+                                                                                                   </tooltip>
+                                                                                                   <HBox.margin>
+                                                                                                      <Insets left="10.0" />
+                                                                                                   </HBox.margin>
+                                                                                                </Button>
+                                                                                             </children>
+                                                                                          </HBox>
+                                                                                          <Button mnemonicParsing="false" onAction="#printClassListForOtherAllocationOperation" styleClass="buttons2" text="Print">
+                                                                                             <graphic>
+                                                                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                   <image>
+                                                                                                      <Image url="@../Resources/pdf.png" />
+                                                                                                   </image>
+                                                                                                </ImageView>
+                                                                                             </graphic>
+                                                                                             <VBox.margin>
+                                                                                                <Insets top="10.0" />
+                                                                                             </VBox.margin>
+                                                                                          </Button>
+                                                                                       </children>
+                                                                                       <HBox.margin>
+                                                                                          <Insets />
+                                                                                       </HBox.margin>
+                                                                                    </VBox>
+                                                                                 </children>
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="5.0" />
+                                                                                 </VBox.margin>
+                                                                              </HBox>
+                                                                           </children>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                               </content>
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/pdf.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </Tab>
+                                                         </tabs>
+                                                      </TabPane>
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                   <HBox.margin>
+                                                      <Insets left="15.0" />
+                                                   </HBox.margin>
+                                                   <children>
+                                                      <HBox alignment="CENTER" prefWidth="200.0">
+                                                         <children>
+                                                            <Region prefHeight="33.0" prefWidth="69.0" HBox.hgrow="ALWAYS" />
+                                                            <TextField fx:id="student_searchField" alignment="CENTER" onMouseClicked="#student_searchFieldMouseClicked" prefHeight="25.0" prefWidth="372.0" promptText="Enter student ID or Name or Class to search" styleClass="fields" />
+                                                            <Region prefHeight="33.0" prefWidth="66.0" HBox.hgrow="ALWAYS" />
+                                                            <Hyperlink onAction="#student_refreshTableOperation" prefHeight="33.0" prefWidth="191.0" styleClass="brownBackground" text="Refresh this table" textFill="WHITE">
+                                                               <font>
+                                                                  <Font name="System Bold" size="16.0" />
+                                                               </font>
+                                                            </Hyperlink>
+                                                         </children>
+                                                         <VBox.margin>
+                                                            <Insets bottom="5.0" />
+                                                         </VBox.margin>
+                                                      </HBox>
+                                                      <TableView fx:id="studentTable" onKeyReleased="#studentTableKeyReleased" onMouseClicked="#studentTableMouseClickerd" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                                                         <columns>
+                                                            <TableColumn fx:id="studentColumn_id" prefWidth="104.0" text="Student ID">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/student.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </TableColumn>
+                                                            <TableColumn fx:id="studentColumn_name" prefWidth="205.0" text="Student Name">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/student.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </TableColumn>
+                                                            <TableColumn fx:id="studentColumn_class" prefWidth="75.0" text="Class">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/School.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </TableColumn>
+                                                            <TableColumn fx:id="studentColumn_dateReg" prefWidth="152.0" text="Date registered">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/calender.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                            </TableColumn>
+                                                         </columns>
+                                                      </TableView>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="8.0" right="5.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

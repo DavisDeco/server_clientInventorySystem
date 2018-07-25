@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" styleClass="patternBackground" stylesheets="@../assetManagement.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daviscahtech_assetmanagement.Controller.ReturnedStockController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <Region prefHeight="33.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="searchOnTableField" alignment="CENTER" focusTraversable="false" onMouseClicked="#searchOnTableFieldMouseClicked" prefHeight="27.0" prefWidth="379.0" promptText="Enter product code or name or departmrnt to search" styleClass="fields" />
+                  <Region prefHeight="33.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Hyperlink onAction="#refresfTable" prefHeight="33.0" prefWidth="151.0" text="Refresh this table" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="stockReturnedTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="stockReturnedColumn_code" prefWidth="107.0" text="product code">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/store.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="stockReturnedColumn_name" prefWidth="130.0" text="product name">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/store.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn prefWidth="162.0" text="Quantity returned">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/store.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <columns>
+                        <TableColumn fx:id="stockReturnedColumn_quantity" prefWidth="58.0" text="Quantity" />
+                        <TableColumn fx:id="stockReturnedColumn_type" prefWidth="92.0" text="Type" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="stockReturnedColumn_department" prefWidth="134.0" text="Department">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/money1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="stockReturnedColumn_returnedBy" prefWidth="233.0" text="Returned By">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/vendorman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="stockReturnedColumn_Date" prefWidth="113.0" text="Date Returned">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/calender.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </TableColumn>
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

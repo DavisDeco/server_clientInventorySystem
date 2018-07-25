@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" styleClass="patternBackground" stylesheets="@../assetManagement.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daviscahtech_assetmanagement.Controller.SuppliersController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="556.0" prefWidth="1160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="546.0" prefWidth="263.0" style="-fx-background-color: floralwhite;" styleClass="radiusBorder">
+               <children>
+                  <Accordion prefHeight="532.0" prefWidth="263.0" VBox.vgrow="ALWAYS">
+                    <panes>
+                      <TitledPane animated="false" text="Register supplier details">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" layoutX="31.0" layoutY="41.0" prefHeight="485.0" prefWidth="261.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <TextField fx:id="supplier_name" promptText="Enter supplier name or company" styleClass="fields">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding>
+                                          </TextField>
+                                          <TextArea fx:id="supplier_desc" focusTraversable="false" prefHeight="70.0" prefWidth="242.0" promptText="Enter products or services supplied" style="-fx-border-color: #cc00cc;" wrapText="true">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </TextArea>
+                                          <TextField fx:id="supplier_address" layoutX="10.0" layoutY="10.0" promptText="Enter address e.g P.O BOX 1234-00200" styleClass="fields">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding>
+                                          </TextField>
+                                          <TextField fx:id="supplier_email" layoutX="10.0" layoutY="107.0" promptText="Enter email address" styleClass="fields">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding>
+                                          </TextField>
+                                          <TextField fx:id="supplier_contact" layoutX="10.0" layoutY="134.0" promptText="Enter supplier contacts" styleClass="fields">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding>
+                                          </TextField>
+                                          <DatePicker fx:id="supplier_dateApproved" editable="false" prefHeight="25.0" prefWidth="275.0" promptText="Choose date approved " style="-fx-border-color: #cc00cc;">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                          </DatePicker>
+                                          <Button mnemonicParsing="false" onAction="#registerSupplierOperation" prefHeight="25.0" prefWidth="297.0" styleClass="buttons2" text="Register supplier details">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="313.0" mnemonicParsing="false" onAction="#updateSupplierOperation" prefHeight="25.0" prefWidth="297.0" styleClass="buttons2" text="Update supplier details">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="338.0" mnemonicParsing="false" onAction="#deletSupplierOperation" prefHeight="25.0" prefWidth="297.0" styleClass="buttons2" text="Delete supplier details">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="363.0" mnemonicParsing="false" onAction="#clearSupplierFieldsOperation" prefHeight="25.0" prefWidth="297.0" styleClass="buttons2" text="Clear details">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </TitledPane>
+                      <TitledPane animated="false" text="Print report">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" layoutX="42.0" layoutY="32.0" prefHeight="485.0" prefWidth="261.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#printSupplierDetailsOperation" prefHeight="25.0" prefWidth="263.0" styleClass="buttons2" text="Print all suppliers details">
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Resources/pdf.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                        </content>
+                      </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+               <children>
+                  <HBox alignment="CENTER" prefWidth="200.0">
+                     <children>
+                        <Region prefHeight="33.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="supplierSearchDetails" alignment="CENTER" onMouseClicked="#supplierSearchMouseClicked" prefHeight="25.0" prefWidth="372.0" promptText="Enter supplier's name, contact or address to search" styleClass="fields" />
+                        <Region prefHeight="33.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                        <Hyperlink onAction="#refreshTableOperation" prefHeight="33.0" prefWidth="186.0" text="Refresh supplier table">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Hyperlink>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TableView fx:id="supplierTable" onKeyReleased="#supplierTableKKeyReleased" onMouseClicked="#supplierTableMouseClicked" prefHeight="200.0" prefWidth="200.0" styleClass="supplierBackground" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="tableColumn_name" prefWidth="119.0" text="Supplier name">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/store.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumn_address" prefWidth="156.0" text="Address">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/map.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumn_email" prefWidth="170.0" text="Email">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/inbox.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumn_contact" prefWidth="144.0" text="Contacts">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/contactlist.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumn_dateApproved" prefWidth="116.0" text="Date approved">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/calender.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="tableColumn_dateReg" prefWidth="145.0" text="Date registered">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/calender.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="8.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

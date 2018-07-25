@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1295.0" stylesheets="@../assetManagement.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daviscahtech_assetmanagement.Controller.RoomMaterialController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="71.0" layoutY="116.0" prefHeight="778.0" prefWidth="1295.0" styleClass="brownBackground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox>
+               <children>
+                  <VBox alignment="TOP_CENTER" prefWidth="200.0" style="-fx-background-radius: 13; -fx-border-radius: 13; -fx-background-color: lightgrey;" stylesheets="@../assetManagement.css">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Product's image">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <HBox alignment="CENTER" style="-fx-border-color: blue;" styleClass="radiusbordershape">
+                           <children>
+                              <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/store.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <Separator>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <Button mnemonicParsing="false" onAction="#chooseProductPhotoOperation" styleClass="camera">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/camera.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Choose product photo if available">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/pin.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Tooltip>
+                           </tooltip>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#increaseStockOfStockedUnitOperation" styleClass="buttons1" text="Increase Stock of registered product">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Resources/woodencrate1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="546.0" prefWidth="263.0" style="-fx-background-color: floralwhite;" styleClass="radiusBorder">
+               <children>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                     <tabs>
+                        <Tab text="Configure">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="gridBackground">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" layoutX="50.0" prefHeight="551.0" prefWidth="263.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Manage new stock into the system">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="productCode" promptText="Enter product code or ID" styleClass="fields">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding>
+                                          </TextField>
+                                          <TextField fx:id="productName" layoutX="15.0" layoutY="33.0" promptText="Enter Product name *" styleClass="fields">
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding>
+                                          </TextField>
+                                          <TextArea fx:id="productDesc" prefHeight="60.0" prefWidth="253.0" promptText="Enter short description of product  *" style="-fx-border-color: #cc00cc;" wrapText="true">
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                          </TextArea>
+                                          <HBox alignment="BOTTOM_CENTER">
+                                             <children>
+                                                <TextField fx:id="productQuantity" promptText="Enter quantity of item *" styleClass="fields">
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="20.0" top="5.0" />
+                                                   </padding>
+                                                </TextField>
+                                                <VBox>
+                                                   <children>
+                                                      <Text fx:id="displayProductType" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <ComboBox fx:id="productTypeCombobox" prefHeight="25.0" prefWidth="101.0" promptText="Type *" style="-fx-border-color: blue;" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <TextField fx:id="productPurchaseCost" promptText="Enter total purchase cost of this tems" styleClass="fields">
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="5.0" left="20.0" top="5.0" />
+                                             </padding>
+                                          </TextField>
+                                          <VBox>
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Text fx:id="displayProductSupplier" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <ComboBox fx:id="productSupplierCombobox" prefHeight="25.0" prefWidth="293.0" promptText="Choose supplier of this product *" style="-fx-border-color: blue;" />
+                                             </children>
+                                          </VBox>
+                                          <DatePicker fx:id="productStockedDate" editable="false" prefHeight="25.0" prefWidth="259.0" promptText="Choose date this product was stocked *" style="-fx-border-color: blue;">
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                          </DatePicker>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Text fx:id="displayMinimumQuantityLevel" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </Text>
+                                                <ComboBox fx:id="productMinAlartCombobox" prefHeight="25.0" prefWidth="281.0" promptText="Set minimum quantity level for alart *" style="-fx-border-color: blue;" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="25.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/woodencrate1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                        <Tab text="Report &amp; printing">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="patternBackground">
+                                 <children>
+                                    <ScrollPane layoutX="-7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <VBox prefWidth="245.0">
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" top="10.0" />
+                                             </padding>
+                                             <children>
+                                                <Text fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="Preview units in table">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Display all units stocked on this  date">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <HBox alignment="CENTER_RIGHT">
+                                                   <children>
+                                                      <VBox alignment="CENTER_RIGHT">
+                                                         <children>
+                                                            <DatePicker fx:id="unitsStockedSpecificDate" editable="false" promptText="Choose a specific date" style="-fx-border-color: green;" />
+                                                            <Button mnemonicParsing="false" onAction="#unitsStockedSpecificDateOperation" styleClass="buttons1" text="Preview">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/preview.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets right="20.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Display units stocked in a given period">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="20.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <HBox prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefWidth="169.0">
+                                                         <children>
+                                                            <DatePicker fx:id="startDateStock" editable="false" prefHeight="25.0" prefWidth="125.0" promptText="Start date" style="-fx-border-color: green;" />
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_RIGHT">
+                                                         <children>
+                                                            <DatePicker fx:id="endDateStock" editable="false" promptText="End date" style="-fx-border-color: green;" />
+                                                            <Button mnemonicParsing="false" onAction="#unitsStockedBetweenPeriodOperation" styleClass="buttons1" text="Preview">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/preview.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Text fill="BLUE" layoutX="20.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generate and print stocked report">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="15.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text layoutX="20.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Print all units stocked on this  date">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <HBox alignment="CENTER_RIGHT" layoutX="20.0" layoutY="62.0">
+                                                   <children>
+                                                      <VBox alignment="CENTER_RIGHT">
+                                                         <children>
+                                                            <DatePicker fx:id="printStockOnSpecificDate" editable="false" promptText="Choose a specific date" style="-fx-border-color: #cc00cc;" />
+                                                            <Button mnemonicParsing="false" onAction="#printStockOnSpecificDateOperation" styleClass="buttons2" text="Print">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/pdf.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets right="20.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Text layoutX="20.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Print units stocked in a given period">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="15.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <HBox layoutX="20.0" layoutY="172.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefWidth="169.0">
+                                                         <children>
+                                                            <DatePicker fx:id="printStartDate" editable="false" prefHeight="25.0" prefWidth="125.0" promptText="Start date" style="-fx-border-color: #cc00cc;" />
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_RIGHT">
+                                                         <children>
+                                                            <DatePicker fx:id="printEndDate" editable="false" promptText="End date" style="-fx-border-color: #cc00cc;" />
+                                                            <Button mnemonicParsing="false" onAction="#printUnitsStockedBetweenDatesOperation" styleClass="buttons2" text="Print">
+                                                               <graphic>
+                                                                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../Resources/pdf.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                               </graphic>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </Button>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Separator prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets top="3.0" />
+                                                   </VBox.margin>
+                                                </Separator>
+                                                <Text fill="BLUE" layoutX="20.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete stocked products ">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text layoutX="20.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete units within a given period">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <HBox layoutX="20.0" layoutY="402.0" prefWidth="200.0">
+                                                   <children>
+                                                      <DatePicker fx:id="deleteStartDate" editable="false" prefHeight="27.0" prefWidth="175.0" promptText="Start date" style="-fx-border-color: green;">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </DatePicker>
+                                                      <DatePicker fx:id="deleteEndDate" editable="false" promptText="End date" style="-fx-border-color: green;" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER">
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <Button mnemonicParsing="false" onAction="#deleteProductBetweenDatesOperatin" prefHeight="32.0" prefWidth="203.0" styleClass="buttons1" text="Mark for delete by admin">
+                                                         <graphic>
+                                                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../Resources/delete.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/pdf.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <children>
+                  <HBox alignment="CENTER" prefWidth="200.0">
+                     <children>
+                        <Region prefHeight="33.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="searchOnTableField" alignment="CENTER" onMouseClicked="#searchOnTableFieldMouseClicked" prefHeight="25.0" prefWidth="372.0" promptText="Enter product code or name or supplier to search" styleClass="fields" />
+                        <Region prefHeight="33.0" prefWidth="18.0" HBox.hgrow="ALWAYS" />
+                        <Hyperlink onAction="#refresfTable" prefHeight="33.0" prefWidth="189.0" styleClass="brownBackground" text="Refresh this table" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TableView fx:id="stockTrace_Table" onKeyReleased="#stockTrace_TableKeyRealesed" onMouseClicked="#stockTrace_TableMouseClicked" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="stockTrace_code" prefWidth="107.0" text="product code">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/store.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="stockTrace_name" prefWidth="130.0" text="product name">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/store.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn prefWidth="162.0" text="Quantity bought">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/store.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <columns>
+                              <TableColumn fx:id="stockTrace_quantity" prefWidth="58.0" text="Quantity" />
+                              <TableColumn fx:id="stockTrace_type" prefWidth="92.0" text="Type" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="stockTrace_cost" prefWidth="113.0" text="Purchase Cost">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/money1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="stockTrace_supplier" prefWidth="150.0" text="Supplier">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/vendorman.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="stockTrace_stockedDate" prefWidth="105.0" text="Date stocked">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Resources/calender.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+                  <ScrollPane vbarPolicy="NEVER">
+                     <content>
+                        <HBox alignment="CENTER" prefHeight="65.0" prefWidth="772.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#registerProductOperation" styleClass="buttons1" text="Register new stock">
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="381.0" layoutY="48.0" mnemonicParsing="false" onAction="#updteProductOperation" styleClass="buttons1" text="Update stock details">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/update.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="407.0" layoutY="48.0" mnemonicParsing="false" onAction="#deleteProdutOperation" styleClass="buttons1" text="Mark for Delete">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="433.0" layoutY="48.0" mnemonicParsing="false" onAction="#clearFieldsOperation" styleClass="buttons1" text="Clear fields">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Resources/clear.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </content>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="8.0" right="5.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>
